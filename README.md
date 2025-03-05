@@ -499,3 +499,147 @@ This document outlines the approach for building the Snapbuy e-commerce project,
 ---
 
 This plan ensures steady progress while balancing learning and building within your **4-hour daily schedule**.
+
+atleast 4 category i should peak
+
+Snapbuy Furniture Categories
+│
+├── Living Room
+│ ├── Sofas & Couches
+│ ├── Coffee Tables
+│ ├── TV Stands & Entertainment Units
+│ ├── Recliners
+│ ├── Bookshelves
+│ ├── Side Tables
+│
+├── Bedroom
+│ ├── Beds (Single, Double, Queen, King)
+│ ├── Wardrobes
+│ ├── Nightstands
+│ ├── Dressers & Mirrors
+│ ├── Bedside Tables
+│ ├── Storage Benches
+│
+├── Dining Room
+│ ├── Dining Tables
+│ ├── Dining Chairs
+│ ├── Bar Stools
+│ ├── Sideboards & Buffets
+│ ├── Kitchen Carts
+│
+├── Office
+│ ├── Desks
+│ ├── Office Chairs
+│ ├── Bookshelves
+│ ├── Filing Cabinets
+│ ├── Conference Tables
+│
+├── Outdoor
+│ ├── Patio Chairs
+│ ├── Outdoor Tables
+│ ├── Hammocks
+│ ├── Garden Benches
+│
+├── Kids
+│ ├── Bunk Beds
+│ ├── Study Tables
+│ ├── Toy Storage
+│ ├── Kids' Chairs
+│
+└── Storage & Organization
+├── Shoe Racks
+├── Cabinets & Drawers
+├── Wall Shelves
+
+### **Essential Collections & Fields for Snapbuy**
+
+Since you're building an e-commerce platform focused on **Home & Living**, your **MongoDB database** should include well-structured collections. Below are the key collections and their essential fields.
+
+---
+
+## **1️⃣ Products Collection** (Stores product details)
+
+Each product should have details like **name, price, category, stock availability, and images**.
+
+| **Field**     | **Type**      | **Description**                               |
+| ------------- | ------------- | --------------------------------------------- |
+| `_id`         | ObjectId      | Unique identifier (automatically generated)   |
+| `name`        | String        | Product name (e.g., "Modern Sofa")            |
+| `description` | String        | Detailed product description                  |
+| `price`       | Number        | Price of the product (e.g., 49.99)            |
+| `category`    | String        | Product category (e.g., "Furniture")          |
+| `stock`       | Number        | Number of available items                     |
+| `images`      | Array[String] | URLs of product images (Cloudinary or GitHub) |
+| `rating`      | Number        | Average rating (1-5)                          |
+| `createdAt`   | Date          | Timestamp when product was added              |
+
+---
+
+## **2️⃣ Users Collection** (Stores customer & admin details)
+
+This collection will store **customer login details, roles, and profile information**.
+
+| **Field**  | **Type**        | **Description**                                |
+| ---------- | --------------- | ---------------------------------------------- |
+| `_id`      | ObjectId        | Unique identifier                              |
+| `name`     | String          | Full name of the user                          |
+| `email`    | String          | User’s email (must be unique)                  |
+| `password` | String (hashed) | Hashed password (if using email/password auth) |
+| `role`     | String          | Role of user (`customer` or `admin`)           |
+
+**Authentication Note:** Since you're using **NextAuth.js**, users might log in using Google or GitHub OAuth, so password storage is optional.
+
+---
+
+## **3️⃣ Orders Collection** (Tracks customer orders)
+
+When a user places an order, this collection **stores order details, payment status, and shipping info**.
+
+| **Field**     | **Type**      | **Description**                                         |
+| ------------- | ------------- | ------------------------------------------------------- |
+| `_id`         | ObjectId      | Unique identifier                                       |
+| `userId`      | ObjectId      | References the user who placed the order                |
+| `products`    | Array[Object] | List of purchased products (productId, quantity, price) |
+| `totalAmount` | Number        | Total cost of the order                                 |
+| `status`      | String        | Order status (`pending`, `shipped`, `delivered`)        |
+| `createdAt`   | Date          | Timestamp when order was placed                         |
+
+---
+
+## **4️⃣ Cart Collection (Optional)** (Stores temporary shopping cart data)
+
+If you're **not** using local storage for the shopping cart, you can store cart items in MongoDB.
+
+| **Field**   | **Type**      | **Description**                          |
+| ----------- | ------------- | ---------------------------------------- |
+| `_id`       | ObjectId      | Unique identifier                        |
+| `userId`    | ObjectId      | References the user’s cart               |
+| `products`  | Array[Object] | List of cart items (productId, quantity) |
+| `createdAt` | Date          | Timestamp when cart was last updated     |
+
+###Hybrid Approach (Best of Both Worlds)
+Use localStorage for fast access while the user is active.
+Sync the cart to MongoDB when the user logs in or after a certain time.
+If the user logs out, you can merge their local cart with the database cart when they return.
+
+---
+
+## **5️⃣ Categories Collection (Optional)** (Manages product categories)
+
+Instead of hardcoding product categories, you can **store them in a separate collection**.
+
+| **Field** | **Type** | **Description**                             |
+| --------- | -------- | ------------------------------------------- |
+| `_id`     | ObjectId | Unique identifier                           |
+| `name`    | String   | Category name (e.g., "Furniture", "Decor")  |
+| `slug`    | String   | SEO-friendly identifier (e.g., `furniture`) |
+
+---
+
+### **Additional Considerations**
+
+-   **Reviews Collection** (If you want user reviews for products)
+-   **Wishlist Collection** (If you want users to save favorite products)
+-   **Coupons Collection** (If you want to offer discounts)
+
+Would you like help implementing these in code? 🚀

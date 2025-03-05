@@ -1,0 +1,222 @@
+[
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9a01" },
+        "name": "Grey",
+        "brand": "Mashari",
+        "price": 120,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "A sophisticated fragrance with woody and musky notes, perfect for evening wear.",
+        "notes": {
+            "top": ["Bergamot", "Lavender"],
+            "middle": ["Cedarwood", "Patchouli"],
+            "base": ["Musk", "Amber"]
+        },
+        "long_lasting": true,
+        "gender": "Unisex",
+        "rating": 4.5,
+        "reviews": 215,
+        "stock": 50,
+        "image": "/public/images/perfumes/amir-0TmDOLBsdqQ-unsplash.jpg"
+    },
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9a02" },
+        "name": "Miss Dior",
+        "brand": "Dior",
+        "price": 150,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "A fresh and floral fragrance with elegant rose and citrus notes, embodying femininity and elegance.",
+        "notes": {
+            "top": ["Mandarin Orange", "Lemon"],
+            "middle": ["Rose", "Jasmine"],
+            "base": ["Musk", "Patchouli"]
+        },
+        "long_lasting": true,
+        "gender": "Women",
+        "rating": 4.8,
+        "reviews": 320,
+        "stock": 30,
+        "image": "/public/images/perfumes/andrea-gallagher-XcHP2S5bGXs-unsplash.jpg"
+    },
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9a03" },
+        "name": "Acca Kappa",
+        "brand": "Acca Kappa",
+        "price": 130,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "A refined scent with a blend of white musk, citrus, and floral notes.",
+        "notes": {
+            "top": ["Lemon", "Bergamot"],
+            "middle": ["Lavender", "Jasmine"],
+            "base": ["White Musk", "Amber"]
+        },
+        "long_lasting": true,
+        "gender": "Unisex",
+        "rating": 4.6,
+        "reviews": 180,
+        "stock": 40,
+        "image": "/public/images/perfumes/april-c-NZAaeVR7MFw-unsplash.jpg"
+    },
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9a04" },
+        "name": "Bleu de Chanel",
+        "brand": "Chanel",
+        "price": 170,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "A bold and woody fragrance with citrus and amber undertones, perfect for confident and modern men.",
+        "notes": {
+            "top": ["Grapefruit", "Lemon"],
+            "middle": ["Ginger", "Nutmeg"],
+            "base": ["Sandalwood", "Cedarwood"]
+        },
+        "long_lasting": true,
+        "gender": "Men",
+        "rating": 4.9,
+        "reviews": 500,
+        "stock": 40,
+        "image": "/public/images/perfumes/jeroen-den-otter-2b0JeJTEclQ-unsplash.jpg"
+    },
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9a05" },
+        "name": "N°5 Chanel de Paris",
+        "brand": "Chanel",
+        "price": 200,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "An iconic floral-aldehyde fragrance with a luxurious scent, a timeless classic.",
+        "notes": {
+            "top": ["Aldehydes", "Ylang-Ylang"],
+            "middle": ["Rose", "Jasmine"],
+            "base": ["Vanilla", "Sandalwood"]
+        },
+        "long_lasting": true,
+        "gender": "Women",
+        "rating": 4.7,
+        "reviews": 600,
+        "stock": 25,
+        "image": "/public/images/perfumes/jess-bailey-NaTza96eJm0-unsplash.jpg"
+    },
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9a06" },
+        "name": "Dolce & Gabbana The One",
+        "brand": "Dolce & Gabbana",
+        "price": 160,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "A warm and spicy fragrance with notes of tobacco, amber, and citrus.",
+        "notes": {
+            "top": ["Grapefruit", "Coriander"],
+            "middle": ["Ginger", "Cardamom"],
+            "base": ["Tobacco", "Amber"]
+        },
+        "long_lasting": true,
+        "gender": "Men",
+        "rating": 4.8,
+        "reviews": 450,
+        "stock": 35,
+        "image": "/public/images/perfumes/kenny-eliason-wSX-poSLSKE-unsplash.jpg"
+    },
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9a07" },
+        "name": "Irresistible",
+        "brand": "Givenchy",
+        "price": 140,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "A vibrant and fruity floral fragrance for the confident and spontaneous woman.",
+        "notes": {
+            "top": ["Pear", "Ambrette"],
+            "middle": ["Rose", "Iris"],
+            "base": ["Musk", "Cedarwood"]
+        },
+        "long_lasting": true,
+        "gender": "Women",
+        "rating": 4.7,
+        "reviews": 290,
+        "stock": 20,
+        "image": "/public/images/perfumes/laura-chouette-CWuKYuewjQk-unsplash.jpg"
+    },
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9a08" },
+        "name": "Coco Chanel",
+        "brand": "Chanel",
+        "price": 180,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "An intense and oriental fragrance with deep amber and vanilla notes.",
+        "notes": {
+            "top": ["Citrus", "Peach"],
+            "middle": ["Rose", "Jasmine"],
+            "base": ["Vanilla", "Amber"]
+        },
+        "long_lasting": true,
+        "gender": "Women",
+        "rating": 4.6,
+        "reviews": 340,
+        "stock": 28,
+        "image": "/public/images/perfumes/laura-chouette-jmACQEf7T2A-unsplash.jpg"
+    },
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9a09" },
+        "name": "Giorgio Armani",
+        "brand": "Armani",
+        "price": 175,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "A luxurious scent blending fresh citrus with warm wood and spice notes.",
+        "notes": {
+            "top": ["Orange", "Bergamot"],
+            "middle": ["Nutmeg", "Lavender"],
+            "base": ["Sandalwood", "Cedar"]
+        },
+        "long_lasting": true,
+        "gender": "Men",
+        "rating": 4.9,
+        "reviews": 410,
+        "stock": 32,
+        "image": "/public/images/perfumes/laura-chouette-zrtov5GAugE-unsplash.jpg"
+    },
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9a0A" },
+        "name": "Maison Francis",
+        "brand": "Maison Francis Kurkdjian",
+        "price": 210,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "A high-end fragrance with an elegant blend of saffron, amber, and floral notes.",
+        "notes": {
+            "top": ["Saffron", "Jasmine"],
+            "middle": ["Amberwood", "Cedar"],
+            "base": ["Musk", "Oakmoss"]
+        },
+        "long_lasting": true,
+        "gender": "Unisex",
+        "rating": 4.9,
+        "reviews": 500,
+        "stock": 18,
+        "image": "/public/images/perfumes/trung-do-bao-s8uBaa5XL8I-unsplash.jpg"
+    },
+    {
+        "_id": { "$oid": "65dbe2f1c9a76a001c2d9b0B" },
+        "name": "Boss Bottled",
+        "brand": "Hugo Boss",
+        "price": 120,
+        "size": "100ml",
+        "category": "Perfume",
+        "description": "A timeless and sophisticated fragrance blending fruity, spicy, and woody notes for the modern man.",
+        "notes": {
+            "top": ["Apple", "Cinnamon", "Bergamot"],
+            "middle": ["Mahogany", "Clove", "Geranium"],
+            "base": ["Vanilla", "Sandalwood", "Olive Wood"]
+        },
+        "long_lasting": true,
+        "gender": "Men",
+        "rating": 4.7,
+        "reviews": 350,
+        "stock": 25,
+        "image": "/public/images/perfumes/scheich-meshael-zahedd-51HzOmKT5AY-unsplash.jpg"
+    }
+]

@@ -1,0 +1,29 @@
+[
+    {
+        "_id": { "$oid": "65d7f9c4e13b2a001c5a8e12" },
+        "userId": "654c29759c21b77d9c6a7a01",
+        "products": [
+            {
+                "product_id": { "$oid": "65d7f92de13b2a001c5a8123" },
+                "name": "Grey",
+                "brand": "Unknown",
+                "category": "Perfume",
+                "quantity": 2,
+                "price": 15.99
+            },
+            {
+                "product_id": { "$oid": "65d7f935e13b2a001c5a8156" },
+                "name": "Miss Dior",
+                "brand": "Dior",
+                "category": "Perfume",
+                "quantity": 1,
+                "price": 25.5
+            }
+        ],
+        "totalAmount": 57.48,
+        "status": "pending",
+        "paymentStatus": "unpaid",
+        "createdAt": { "$date": "2025-02-23T12:30:45.000Z" },
+        "updatedAt": { "$date": "2025-02-24T10:15:30.000Z" }
+    }
+]

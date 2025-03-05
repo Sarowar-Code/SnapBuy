@@ -1,0 +1,12 @@
+[
+    {
+        "_id": { "$oid": "654c29759c21b77d9c6a7a01" },
+        "name": "Sarowar Hossain",
+        "email": "sarw@gmail.com",
+        "password": "1234",
+        "role": "customer",
+        "orders": [{ "$oid": "65d7f9c4e13b2a001c5a8e12" }],
+        "createdAt": { "$date": "2025-02-24T12:00:00Z" },
+        "updatedAt": { "$date": "2025-02-24T12:30:00Z" }
+    }
+]
