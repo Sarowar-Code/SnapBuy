@@ -22,9 +22,11 @@ export default {
                     md: "768px",
                     lg: "1024px",
                     xl: "1280px",
-                    "2xl": "1440px",
+                    "2xl": "1440px", // Desktop width is fixed
+                    "3xl": "1440px", // Prevents the container from growing beyond 1440px
                 },
             },
+
             colors: {
                 primary: {
                     DEFAULT: "hsl(var(--primary))",
