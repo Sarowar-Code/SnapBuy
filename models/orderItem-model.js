@@ -29,4 +29,4 @@ const orderItemSchema = new mongoose.Schema(
 );
 
 export const orderItemModel =
-    mongoose.models.OrderItem || mongoose.model("OrderItem", orderItemSchema);
+    mongoose.models.orderItems ?? mongoose.model("orderItems", orderItemSchema);

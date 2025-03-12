@@ -643,3 +643,137 @@ Instead of hardcoding product categories, you can **store them in a separate col
 -   **Coupons Collection** (If you want to offer discounts)
 
 Would you like help implementing these in code? 🚀
+
+{{{
+'use client';
+
+import Autoplay from 'embla-carousel-autoplay';
+import { useEffect, useState } from 'react';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Star } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function FlashSales({ products }) {
+const [api, setApi] = useState(null);
+const [current, setCurrent] = useState(0);
+const [total, setTotal] = useState(0);
+
+useEffect(() => {
+if (!api) return;
+setTotal(api.scrollSnapList().length);
+api.on('select', () => setCurrent(api.selectedScrollSnap()));
+}, [api]);
+
+return (
+<div className='w-full max-w-6xl mx-auto px-4'>
+<div className='mb-4 flex items-end justify-between'>
+<h2 className='text-2xl font-semibold'>Flash Sales</h2>
+<Link href='/flash-sales' className='text-primary text-sm'>
+View All
+</Link>
+</div>
+<Carousel setApi={setApi} plugins={[Autoplay({ delay: 5000 })]}>
+<CarouselContent>
+{products.map(product => (
+<CarouselItem key={product.id} className='md:basis-1/2 lg:basis-1/3 xl:basis-1/4'>
+<ProductCard product={product} />
+</CarouselItem>
+))}
+</CarouselContent>
+</Carousel>
+<div className='mt-2 text-center text-sm'>
+{current + 1} / {total}
+</div>
+</div>
+);
+}
+
+function ProductCard({ product }) {
+return (
+<div className='border rounded-lg p-4 shadow-sm'>
+<Link href={`/product/${product.slug}`}>
+<div className='relative w-full h-48'>
+<Image src={product.image} alt={product.name} fill className='object-contain' />
+</div>
+<h3 className='mt-2 text-lg font-semibold'>{product.name}</h3>
+</Link>
+<Rating rating={product.rating} reviews={product.reviews} />
+<p className='mt-1 text-xl font-bold text-primary'>${product.price}</p>
+</div>
+);
+}
+
+function Rating({ rating, reviews }) {
+return (
+<div className='flex items-center gap-1 text-sm'>
+<Star className='w-4 h-4 text-yellow-500' />
+<span>{rating.toFixed(1)}</span>
+<span className='text-gray-500'>({reviews})</span>
+</div>
+);
+}
+}}}
+
+---
+
+import { Card, CardContent } from "@/components/ui/card"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+
+export function CarouselDemo() {
+return (
+<Carousel
+className="w-full"
+opts={{
+        align: "start",
+        loop: true,
+      }} >
+<CarouselContent className="-ml-1">
+{Array.from({ length: 12 }).map((\_, index) => (
+<CarouselItem key={index} className="pl-1 md:basis-1/6">
+<div className="p-1">
+<Card>
+<CardContent className="flex aspect-square items-center justify-center p-2">
+<span className="text-2xl font-semibold">{index + 1}</span>
+</CardContent>
+</Card>
+</div>
+</CarouselItem>
+))}
+</CarouselContent>
+<CarouselPrevious />
+<CarouselNext />
+</Carousel>
+)
+}
+
+---
+
+---
+
+"use client";
+
+import { useState, useEffect } from "react";
+
+export function useMediaQuery(query) {
+const [matches, setMatches] = useState(false);
+
+useEffect(() => {
+if (typeof window !== "undefined") {
+const media = window.matchMedia(query);
+setMatches(media.matches);
+
+      const listener = () => setMatches(media.matches);
+      media.addEventListener("change", listener);
+
+      return () => media.removeEventListener("change", listener);
+    }
+
+    return () => {};
+
+}, [query]);
+
+return matches;
+}
+
+---

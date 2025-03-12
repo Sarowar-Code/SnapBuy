@@ -72,4 +72,4 @@ const productSchema = new mongoose.Schema(
 );
 
 export const productModel =
-    mongoose.models.Product || mongoose.model("Product", productSchema);
+    mongoose.models.products ?? mongoose.model("products", productSchema);

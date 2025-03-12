@@ -36,4 +36,4 @@ const userSchema = new mongoose.Schema(
 );
 
 export const userModel =
-    mongoose.models.users || mongoose.model("users", userSchema);
+    mongoose.models.users ?? mongoose.model("users", userSchema);

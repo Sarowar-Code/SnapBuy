@@ -1,110 +1,57 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Heart, Star } from "lucide-react";
-import { useState } from "react";
-
-export default function ProductCard({ product, showAddToCart = false }) {
-    const [isFavorite, setIsFavorite] = useState(false);
-
-    // Set background color based on product color
-    const getBackgroundColor = () => {
-        switch (product.color) {
-            case "blue":
-                return "bg-blue-100";
-            case "pink":
-                return "bg-pink-100";
-            case "black":
-                return "bg-gray-800";
-            case "red":
-                return "bg-red-100";
-            case "gray":
-            default:
-                return "bg-gray-100";
-        }
-    };
-
+import { Card, CardContent } from "@/components/ui/card";
+import { Eye, Heart } from "lucide-react";
+import Image from "next/image";
+import StarRating from "../flashSale/StarRating";
+const ProductCard = () => {
     return (
-        <div className="flex-shrink-0 w-[250px] bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-            <div className="relative">
-                <div className="absolute top-2 left-2 z-10 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                    -{product.discount}%
-                </div>
-                <button
-                    className={cn(
-                        "absolute top-2 right-2 z-10 p-1.5 rounded-full",
-                        isFavorite ? "bg-red-50" : "bg-gray-50"
-                    )}
-                    onClick={() => setIsFavorite(!isFavorite)}
-                    aria-label={
-                        isFavorite
-                            ? "Remove from favorites"
-                            : "Add to favorites"
-                    }
-                >
-                    <Heart
-                        className={cn(
-                            "h-5 w-5",
-                            isFavorite
-                                ? "fill-red-500 text-red-500"
-                                : "text-gray-400"
-                        )}
-                    />
-                </button>
-                <div
-                    className={`h-[200px] w-full ${getBackgroundColor()} flex items-center justify-center`}
-                >
-                    <img
-                        src={product.image || "/placeholder.svg"}
-                        alt={product.name}
-                        className="h-full w-full object-contain"
-                    />
-                </div>
+        <Card className="relative">
+            <div className="absolute top-3 left-3 z-10">
+                <span className="bg-red-500 text-white text-xs sm:text-sm px-2 py-1 rounded">
+                    -{345}%
+                </span>
             </div>
-
-            <div className="p-4">
-                <div className="text-sm text-gray-500 mb-1">
-                    {product.category}
+            <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
+                <Button
+                    variant="secondary"
+                    size="icon"
+                    className="h-7 opacity-70 w-7 sm:h-8 sm:w-8 rounded-full"
+                >
+                    <Heart className="h-3 w-3 sm:h-4 sm:w-4" />
+                </Button>
+                <Button
+                    variant="secondary"
+                    size="icon"
+                    className="h-7 opacity-70 w-7 sm:h-8 sm:w-8 rounded-full"
+                >
+                    <Eye className="h-3 w-3 sm:h-4 sm:w-4" />
+                </Button>
+            </div>
+            <CardContent className="p-3 sm:p-4">
+                <div className="aspect-square relative mb-3 sm:mb-4">
+                    <Image
+                        src="/images/perfumes/andrea-gallagher-XcHP2S5bGXs-unsplash.jpg"
+                        alt="product"
+                        width={200}
+                        height={200}
+                        className="w-full h-full object-cover rounded-lg"
+                    />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-1 truncate">
-                    {product.name}
-                </h3>
-
-                <div className="flex items-center mb-2">
-                    <div className="flex text-amber-400 mr-1">
-                        {[...Array(5)].map((_, i) => (
-                            <Star
-                                key={i}
-                                className={cn(
-                                    "h-4 w-4",
-                                    i < Math.floor(product.rating)
-                                        ? "fill-amber-400"
-                                        : "fill-gray-200"
-                                )}
-                            />
-                        ))}
+                <div className="space-y-1 sm:space-y-2">
+                    <h4 className="font-medium text-sm sm:text-base line-clamp-1">
+                        itora
+                    </h4>
+                    <div className="flex gap-2">
+                        <span className="text-red-500 font-semibold">$230</span>
+                        <span className="text-muted-foreground line-through text-sm">
+                            $210
+                        </span>
                     </div>
-                    <span className="text-xs text-gray-500">
-                        ({product.reviews})
-                    </span>
+                    <StarRating rating={5} reviews={2} />
                 </div>
-
-                <div className="flex items-center">
-                    <span className="font-bold text-gray-900">
-                        ${product.discountedPrice}
-                    </span>
-                    <span className="ml-2 text-sm text-gray-500 line-through">
-                        ${product.originalPrice}
-                    </span>
-                </div>
-
-                {showAddToCart && (
-                    <Button className="w-full mt-3 bg-red-500 hover:bg-red-600 text-white">
-                        Add To Cart
-                    </Button>
-                )}
-            </div>
-        </div>
+            </CardContent>
+        </Card>
     );
-}
+};
+
+export default ProductCard;
