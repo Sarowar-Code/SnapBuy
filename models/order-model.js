@@ -58,5 +58,5 @@ const orderSchema = new mongoose.Schema(
     }
 );
 
-export const orderModel =
-    mongoose.models.orders ?? mongoose.model("orders", orderSchema);
+export const Order =
+    mongoose.models.Order || mongoose.model("Order", orderSchema);

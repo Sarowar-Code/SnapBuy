@@ -28,5 +28,5 @@ const orderItemSchema = new mongoose.Schema(
     }
 );
 
-export const orderItemModel =
-    mongoose.models.orderItems ?? mongoose.model("orderItems", orderItemSchema);
+export const OrderItem =
+    mongoose.models.OrderItem || mongoose.model("OrderItem", orderItemSchema);

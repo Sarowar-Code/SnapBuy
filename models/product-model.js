@@ -5,7 +5,6 @@ const productSchema = new mongoose.Schema(
         name: {
             type: String,
             required: true,
-            trim: true,
         },
         brand: {
             type: String,
@@ -18,8 +17,8 @@ const productSchema = new mongoose.Schema(
             min: 0,
         },
         size: {
-            type: String,
-            trim: true, // Optional for non-perfume products
+            value: { type: Number, min: 0 },
+            unit: { type: String, enum: ["ml", "oz", "g"] },
         },
         category: {
             type: String,
@@ -31,10 +30,11 @@ const productSchema = new mongoose.Schema(
             trim: true,
         },
         notes: {
-            top: { type: [String], default: [] },
-            middle: { type: [String], default: [] },
-            base: { type: [String], default: [] },
+            top: { type: [String], default: undefined },
+            middle: { type: [String], default: undefined },
+            base: { type: [String], default: undefined },
         },
+
         long_lasting: {
             type: Boolean,
             default: false, // Relevant for perfumes but optional for other products
@@ -71,5 +71,5 @@ const productSchema = new mongoose.Schema(
     }
 );
 
-export const productModel =
-    mongoose.models.products ?? mongoose.model("products", productSchema);
+export const Product =
+    mongoose.models.Product || mongoose.model("Product", productSchema);

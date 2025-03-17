@@ -107,13 +107,7 @@ export default function Navbar() {
                                     </div>
                                 )}
                             </div>
-                            <div className="relative">
-                                <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground text-text-primary" />
-                                <Input
-                                    placeholder="Search products..."
-                                    className="pl-8"
-                                />
-                            </div>
+
                             <div className="flex items-center justify-between border-t border-b py-4">
                                 <Link
                                     href="/wishlist"

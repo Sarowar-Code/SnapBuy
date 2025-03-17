@@ -17,7 +17,7 @@
         "rating": 4.5,
         "reviews": 215,
         "stock": 50,
-        "image": "/public/images/perfumes/amir-0TmDOLBsdqQ-unsplash.jpg"
+        "image": "/images/perfumes/amir-0TmDOLBsdqQ-unsplash.jpg"
     },
     {
         "_id": { "$oid": "65dbe2f1c9a76a001c2d9a02" },
@@ -37,7 +37,7 @@
         "rating": 4.8,
         "reviews": 320,
         "stock": 30,
-        "image": "/public/images/perfumes/andrea-gallagher-XcHP2S5bGXs-unsplash.jpg"
+        "image": "/images/perfumes/andrea-gallagher-XcHP2S5bGXs-unsplash.jpg"
     },
     {
         "_id": { "$oid": "65dbe2f1c9a76a001c2d9a03" },
@@ -57,7 +57,7 @@
         "rating": 4.6,
         "reviews": 180,
         "stock": 40,
-        "image": "/public/images/perfumes/april-c-NZAaeVR7MFw-unsplash.jpg"
+        "image": "/images/perfumes/april-c-NZAaeVR7MFw-unsplash.jpg"
     },
     {
         "_id": { "$oid": "65dbe2f1c9a76a001c2d9a04" },
@@ -77,7 +77,7 @@
         "rating": 4.9,
         "reviews": 500,
         "stock": 40,
-        "image": "/public/images/perfumes/jeroen-den-otter-2b0JeJTEclQ-unsplash.jpg"
+        "image": "/images/perfumes/jeroen-den-otter-2b0JeJTEclQ-unsplash.jpg"
     },
     {
         "_id": { "$oid": "65dbe2f1c9a76a001c2d9a05" },
@@ -97,7 +97,7 @@
         "rating": 4.7,
         "reviews": 600,
         "stock": 25,
-        "image": "/public/images/perfumes/jess-bailey-NaTza96eJm0-unsplash.jpg"
+        "image": "/images/perfumes/jess-bailey-NaTza96eJm0-unsplash.jpg"
     },
     {
         "_id": { "$oid": "65dbe2f1c9a76a001c2d9a06" },
@@ -117,7 +117,7 @@
         "rating": 4.8,
         "reviews": 450,
         "stock": 35,
-        "image": "/public/images/perfumes/kenny-eliason-wSX-poSLSKE-unsplash.jpg"
+        "image": "/images/perfumes/kenny-eliason-wSX-poSLSKE-unsplash.jpg"
     },
     {
         "_id": { "$oid": "65dbe2f1c9a76a001c2d9a07" },
@@ -137,7 +137,7 @@
         "rating": 4.7,
         "reviews": 290,
         "stock": 20,
-        "image": "/public/images/perfumes/laura-chouette-CWuKYuewjQk-unsplash.jpg"
+        "image": "/images/perfumes/laura-chouette-CWuKYuewjQk-unsplash.jpg"
     },
     {
         "_id": { "$oid": "65dbe2f1c9a76a001c2d9a08" },
@@ -157,7 +157,7 @@
         "rating": 4.6,
         "reviews": 340,
         "stock": 28,
-        "image": "/public/images/perfumes/laura-chouette-jmACQEf7T2A-unsplash.jpg"
+        "image": "/images/perfumes/laura-chouette-jmACQEf7T2A-unsplash.jpg"
     },
     {
         "_id": { "$oid": "65dbe2f1c9a76a001c2d9a09" },
@@ -177,7 +177,7 @@
         "rating": 4.9,
         "reviews": 410,
         "stock": 32,
-        "image": "/public/images/perfumes/laura-chouette-zrtov5GAugE-unsplash.jpg"
+        "image": "/images/perfumes/laura-chouette-zrtov5GAugE-unsplash.jpg"
     },
     {
         "_id": { "$oid": "65dbe2f1c9a76a001c2d9a0A" },
@@ -197,7 +197,7 @@
         "rating": 4.9,
         "reviews": 500,
         "stock": 18,
-        "image": "/public/images/perfumes/trung-do-bao-s8uBaa5XL8I-unsplash.jpg"
+        "image": "/images/perfumes/trung-do-bao-s8uBaa5XL8I-unsplash.jpg"
     },
     {
         "_id": { "$oid": "65dbe2f1c9a76a001c2d9b0B" },
@@ -217,6 +217,6 @@
         "rating": 4.7,
         "reviews": 350,
         "stock": 25,
-        "image": "/public/images/perfumes/scheich-meshael-zahedd-51HzOmKT5AY-unsplash.jpg"
+        "image": "/images/perfumes/scheich-meshael-zahedd-51HzOmKT5AY-unsplash.jpg"
     }
 ]

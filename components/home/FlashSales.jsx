@@ -1,65 +1,15 @@
 "use client";
-import CountdownTimer from "@/components/flashSale/CountdownTimer";
+import CountdownTimer from "@/components/home/CountdownTimer";
+import { getAllProduct } from "@/database/queries";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useState } from "react";
 import PrimaryButton from "../common/PrimaryButton";
 import ProductCard from "../product/ProductCard";
 import { Button } from "../ui/button";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
-const products = [
-    {
-        id: 1,
-        name: "HAVIT HV-G92 Gamepad",
-        originalPrice: 650,
-        salePrice: 420,
-        discount: 40,
-        rating: 5,
-        reviews: 88,
-        image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-        id: 2,
-        name: "AK-900 Wired Keyboard",
-        originalPrice: 1160,
-        salePrice: 850,
-        discount: 35,
-        rating: 4,
-        reviews: 75,
-        image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-        id: 3,
-        name: "S-Series Comfort Chair",
-        originalPrice: 400,
-        salePrice: 375,
-        discount: 25,
-        rating: 5,
-        reviews: 99,
-        image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-        id: 4,
-        name: "IPS LCD Gaming Monitor",
-        originalPrice: 400,
-        salePrice: 370,
-        discount: 30,
-        rating: 5,
-        reviews: 99,
-        image: "/placeholder.svg?height=200&width=200",
-    },
-    {
-        id: 5,
-        name: "S-Series Office Chair",
-        originalPrice: 400,
-        salePrice: 375,
-        discount: 25,
-        rating: 5,
-        reviews: 99,
-        image: "/placeholder.svg?height=200&width=200",
-    },
-];
 
-export default function FlashSales() {
+export default async function FlashSales() {
+    const allProducts = await getAllProduct();
     const [api, setApi] = useState();
     const isMobile = useMediaQuery("(max-width: 640px)");
     const isTablet = useMediaQuery(
@@ -73,14 +23,16 @@ export default function FlashSales() {
     };
 
     return (
-        <div className="w-full mx-auto px-4">
+        <div className="w-full mx-auto">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
                 <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                        <div className="w-5 h-10 bg-red-500 rounded-sm" />
-                        <h2 className="text-red-500 font-medium">Today's</h2>
+                        <div className="w-5 h-10 bg-primary rounded-sm" />
+                        <h2 className="text-primary font-medium">Today's</h2>
                     </div>
-                    <h3 className="text-2xl font-semibold">Flash Sales</h3>
+                    <h3 className="text-3xl text-text-primary font-semibold">
+                        Flash Sales
+                    </h3>
                 </div>
 
                 <div className="flex sm:flex-row items-start sm:items-center gap-4 sm:gap-8 w-full sm:w-auto">
@@ -145,9 +97,9 @@ export default function FlashSales() {
                 setApi={setApi}
             >
                 <CarouselContent className="-ml-4">
-                    {products.map((product) => (
+                    {allProducts.map((product) => (
                         <CarouselItem
-                            key={product.id}
+                            key={product?.name}
                             className="pl-4 basis-full sm:basis-1/2 lg:basis-1/4"
                         >
                             <ProductCard />
